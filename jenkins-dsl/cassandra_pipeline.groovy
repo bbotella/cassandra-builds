@@ -439,7 +439,7 @@ pipeline {
       stage('Summary') {
         steps {
             sh "rm -fR cassandra-builds"
-            sh "git clone --depth 1 --single-branch https://gitbox.apache.org/repos/asf/cassandra-builds.git"
+            sh "git clone --depth 1 --single-branch https://github.com/apache/cassandra-builds.git"
             sh "./cassandra-builds/build-scripts/cassandra-test-report.sh"
             junit '**/build/test/**/TEST*.xml,**/cqlshlib.xml,**/nosetests.xml'
             script {
